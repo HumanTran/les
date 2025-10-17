@@ -41,8 +41,12 @@ body::after {
 
 /* Animation */
 @keyframes backgroundMove {
-    0% { background-position: 0 0; }
-    100% { background-position: 100vw 0; }
+    0% {
+        background-position: 0 0;
+    }
+    100% { 
+        background-position: 100vw 0; 
+    }
 }
 
 @keyframes gradientShift {
@@ -69,19 +73,33 @@ body::after {
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .container { padding: 1.5rem; }
-    body::after { background-size: auto 95vh; animation-duration: 40s; }
+    .container { 
+        padding: 1.5rem; 
+    }
+    body::after { 
+        background-size: auto 95vh; animation-duration: 40s; 
+    }
 }
 
 @media (max-width: 768px) {
-    .container { flex-direction: column; padding: 1rem; }
-    body::after { background-size: auto 90vh; animation-duration: 50s; }
+    .container { 
+        flex-direction: column; padding: 1rem; 
+    }
+    body::after { 
+        background-size: auto 90vh; animation-duration: 50s; 
+    }
 }
 
 @media (max-width: 480px) {
-    html, body { font-size: 14px; }
-    .container { padding: 0.75rem; }
-    body::after { background-size: auto 90vh; }
+    html, body { 
+        font-size: 14px; 
+    }
+    .container { 
+        padding: 0.75rem; 
+    }
+    body::after { 
+        background-size: auto 90vh; 
+    }
 }
 
 /* Fix Safari iOS */
