@@ -11,64 +11,38 @@ html {
 }
 
 body {
-    background: url('background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    overflow-x: hidden;
-
-    font-family: 'Quicksand', Arial, sans-serif;
     position: relative;
-    
-    color: #2c2c2c !important;
-    filter: none !important;
-    -webkit-filter: none !important;
+    overflow-x: hidden;
+    font-family: 'Quicksand', Arial, sans-serif;
+    color: #2c2c2c;
 }
 
-*, *::before, *::after {
-    filter: none !important;
-    -webkit-filter: none !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-}
-
+/* Ảnh nền chính (background.jpg) */
 body::before {
     content: '';
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 10% 20%, rgba(168, 216, 234, 0.4) 0%, transparent 50%),
-        radial-gradient(circle at 90% 80%, rgba(232, 180, 217, 0.4) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(194, 184, 224, 0.3) 0%, transparent 60%);
-    animation: gradientShift 15s ease-in-out infinite;
-    z-index: -2;
-    filter: blur(80px);
-    opacity: 1 !important;
+    inset: 0; /* top:0; left:0; width:100%; height:100% */
+    z-index: -3;
+    background: url('background.jpg') no-repeat center center;
+    background-size: cover;
 }
 
+/* Ánh sáng mờ ảo (gradient pastel) */
 body::after {
     content: '';
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('skibidi.png') repeat-x;
-    background-size: auto 100vh;
-    animation: backgroundMove 70s linear infinite;
+    inset: 0;
     z-index: -1;
-    opacity: 1;
+    background: url('skibidi.png') repeat-x;
+    background-size: auto 100vh, cover, cover, cover;
+    animation: backgroundMove 70s linear infinite;
     will-change: background-position;
 }
 
+/* Animation */
 @keyframes backgroundMove {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 100vw 0;
-    }
+    0% { background-position: 0 0; }
+    100% { background-position: 100vw 0; }
 }
 
 @keyframes gradientShift {
@@ -82,6 +56,7 @@ body::after {
     }
 }
 
+/* Container nội dung */
 .container {
     width: 100%;
     position: relative;
@@ -92,45 +67,26 @@ body::after {
     color: inherit !important;
 }
 
+/* Responsive */
 @media (max-width: 1024px) {
-    body {
-        background-size: cover;
-    }
-
-    .container {
-        padding: 1.5rem;
-    }
-
-    body::after {
-        background-size: auto 95vh;
-        animation-duration: 40s;
-    }
+    .container { padding: 1.5rem; }
+    body::after { background-size: auto 95vh; animation-duration: 40s; }
 }
 
-/* Điện thoại (màn hình nhỏ, < 768px) */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        padding: 1rem;
-    }
-
-    body::after {
-        background-size: auto 90vh;
-        animation-duration: 50s;
-    }
+    .container { flex-direction: column; padding: 1rem; }
+    body::after { background-size: auto 90vh; animation-duration: 50s; }
 }
 
-/* Điện thoại rất nhỏ (<480px) */
 @media (max-width: 480px) {
-    html, body {
-        font-size: 14px;
-    }
+    html, body { font-size: 14px; }
+    .container { padding: 0.75rem; }
+    body::after { background-size: auto 90vh; }
+}
 
-    .container {
-        padding: 0.75rem;
-    }
-
-    body::after {
-        background-size: auto 90vh;
+/* Fix Safari iOS */
+@supports (-webkit-touch-callout: none) {
+    body::before {
+        filter: none !important; /* bỏ blur trên iPhone */
     }
 }
