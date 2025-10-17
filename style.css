@@ -1,0 +1,93 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color-scheme: light only !important;
+}
+
+html {
+    color-scheme: light only !important;
+    filter: none !important;
+}
+
+body {
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Quicksand', Arial, sans-serif;
+    position: relative;
+    background-color: #c2b8e0 !important;
+    color: #2c2c2c !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+}
+
+*, *::before, *::after {
+    filter: none !important;
+    -webkit-filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(168, 216, 234, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(232, 180, 217, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(194, 184, 224, 0.3) 0%, transparent 60%);
+    animation: gradientShift 15s ease-in-out infinite;
+    z-index: -2;
+    filter: blur(80px);
+    opacity: 1 !important;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 100%;
+    background: url('skibidi.png') repeat-x;
+    background-size: auto 100vh;
+    animation: backgroundMove 30s linear infinite;
+    z-index: -1;
+    opacity: 1;
+}
+
+@keyframes backgroundMove {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(33.333%);
+    }
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent !important;
+    color: inherit !important;
+}
