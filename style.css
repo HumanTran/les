@@ -115,7 +115,7 @@ body::after {
     }
 
     body::after {
-        background-size: auto 95vh;
+        background-size: auto 90vh;
         animation-duration: 50s;
     }
 }
@@ -131,6 +131,6 @@ body::after {
     }
 
     body::after {
-        background-size: auto 95vh;
+        background-size: auto 90vh;
     }
 }
