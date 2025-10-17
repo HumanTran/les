@@ -43,7 +43,7 @@ body::before {
         radial-gradient(circle at 50% 50%, rgba(194, 184, 224, 0.3) 0%, transparent 60%);
     animation: gradientShift 15s ease-in-out infinite;
     z-index: -2;
-    filter: blur(10px);
+    filter: blur(80px);
     opacity: 1 !important;
 }
 
