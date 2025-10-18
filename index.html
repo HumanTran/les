@@ -10,6 +10,55 @@
 </head>
 <body>
     <div class="container">
+        <div class="envelope">
+            <div class="love-text">"i love you"</div>
+            <div class="star-decor star1"></div>
+            <div class="star-decor star2"></div>
+            <div class="star-decor star3"></div>
+            <div class="star-decor star4"></div>
+            <div class="star-decor star5"></div>
+            <div class="star-decor star6"></div>
+            <div class="star-decor star7"></div>
+            <div class="star-decor star8"></div>
+            <div class="star-decor star9"></div>
+            <div class="star-decor star10"></div>
+            <div class="star-decor star11"></div>
+            <div class="star-decor star12"></div>
+            <div class="star-decor star13"></div>
+            <div class="star-decor star14"></div>
+            <div class="star-decor star15"></div>
+            <div class="envelope-flap"></div>
+            <div class="letter-content">
+                <button class="close-btn">✕</button>
+                <div class="letter-header">For You </div>
+                <div class="letter-body">
+                    <p>Gửi người đặc biệt của tôi,</p>
+                    <p>Mỗi ngày bên cạnh bạn đều là một ngày tuyệt vời. Cảm ơn bạn vì đã luôn ở đó và làm cho cuộc sống của tôi thật ý nghĩa.</p>
+                    <p>Yêu bạn nhiều lắm! </p>
+                </div>
+                <div class="letter-signature">~ Love, Me ~</div>
+            </div>
+            <div class="envelope-body">
+                <div class="heart"></div>
+                <div class="envelope-text">For You</div>
+            </div>
+        </div>
     </div>
+    <script>
+        const envelope = document.querySelector('.envelope');
+        const closeBtn = document.querySelector('.close-btn');
+        
+        envelope.addEventListener('click', function(e) {
+            // Không mở nếu click vào nút close
+            if (!e.target.classList.contains('close-btn')) {
+                this.classList.add('opened');
+            }
+        });
+        
+        closeBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            envelope.classList.remove('opened');
+        });
+    </script>
 </body>
 </html>
