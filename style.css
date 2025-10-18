@@ -3,6 +3,12 @@
     padding: 0;
     box-sizing: border-box;
     color-scheme: light only !important;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 html {
@@ -114,6 +120,8 @@ body::after {
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     animation: gentleFloat 5s ease-in-out infinite;
     overflow: visible;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 .envelope::before {
@@ -428,6 +436,8 @@ body::after {
     z-index: 101;
     line-height: 1;
     padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 .close-btn:hover {
