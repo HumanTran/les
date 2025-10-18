@@ -376,11 +376,12 @@ body::after {
 
 .letter-header {
     font-size: 28px;
-    font-weight: 600;
+    font-weight: 700;
     color: #9B6BB8;
     text-align: center;
     margin-bottom: 20px;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Quicksand', sans-serif;
+    letter-spacing: 0.5px;
 }
 
 .letter-body {
