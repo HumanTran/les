@@ -239,15 +239,6 @@ body::after {
     height: 22px;
 }
 
-/* Hàng 5 - 1 ngôi sao đỉnh (đáy) */
-.star15 {
-    top: 76px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 22px;
-    height: 22px;
-}
-
 @keyframes gentleFloat {
     0%, 100% {
         transform: translateY(0) rotate(0deg);
