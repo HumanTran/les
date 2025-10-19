@@ -104,6 +104,11 @@
             e.stopPropagation();
             envelope.classList.remove('opened');
             musicPlaylist.classList.remove('show');
+            // Tắt nhạc khi đóng envelope
+            audioPlayer.pause();
+            audioPlayer.currentTime = 0;
+            // Xóa active từ tất cả các bài
+            songItems.forEach(song => song.classList.remove('active'));
         });
 
         // Click vào hình ảnh để mở playlist
@@ -116,6 +121,11 @@
         closePlaylistBtn.addEventListener('click', function(e) {
             e.stopPropagation();
             musicPlaylist.classList.remove('show');
+            // Tắt nhạc khi đóng playlist
+            audioPlayer.pause();
+            audioPlayer.currentTime = 0;
+            // Xóa active từ tất cả các bài
+            songItems.forEach(song => song.classList.remove('active'));
         });
 
         // Click vào bài hát để phát
