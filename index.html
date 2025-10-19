@@ -30,13 +30,53 @@
             <div class="envelope-flap"></div>
             <div class="letter-content">
                 <button class="close-btn">✕</button>
-                <div class="letter-header">For You </div>
-                <div class="letter-body">
-                    <p>Gửi người đặc biệt của tôi,</p>
-                    <p>Mỗi ngày bên cạnh bạn đều là một ngày tuyệt vời. Cảm ơn bạn vì đã luôn ở đó và làm cho cuộc sống của tôi thật ý nghĩa.</p>
-                    <p>Yêu bạn nhiều lắm! </p>
+                <img src="1.jpg" alt="Letter" class="letter-image" id="letterImage">
+                <div class="music-playlist">
+                    <button class="close-playlist-btn">✕</button>
+                    <div class="playlist-header">
+                        <span class="music-icon">🎵</span>
+                        <h3>月がきれいですね</h3>
+                    </div>
+                    <audio id="audioPlayer" controls></audio>
+                    <div class="playlist-container">
+                        <div class="song-item" data-src="To The Moon - hooligan..mp3">
+                            <span class="song-number">1</span>
+                            <span class="song-name">To The Moon - hooligan.</span>
+                        </div>
+                        <div class="song-item" data-src="I'm Gonna Love You - D.O..mp3">
+                            <span class="song-number">2</span>
+                            <span class="song-name">I'm Gonna Love You - D.O., Wonstein</span>
+                        </div>
+                        <div class="song-item" data-src="Yours - Jimmy Brown.mp3">
+                            <span class="song-number">3</span>
+                            <span class="song-name">Yours - Jimmy Brown</span>
+                        </div>
+                        <div class="song-item" data-src="Yours - Raiden.mp3">
+                            <span class="song-number">4</span>
+                            <span class="song-name">Yours - Raiden, CHANYEOL</span>
+                        </div>
+                        <div class="song-item" data-src="ONLY - LeeHi.mp3">
+                            <span class="song-number">5</span>
+                            <span class="song-name">ONLY - LeeHi</span>
+                        </div>
+                        <div class="song-item" data-src="Me After You - Paul Kim.mp3">
+                            <span class="song-number">6</span>
+                            <span class="song-name">Me After You - Paul Kim</span>
+                        </div>
+                        <div class="song-item" data-src="B612 - BUZZ.mp3">
+                            <span class="song-number">7</span>
+                            <span class="song-name">B612 - BUZZ</span>
+                        </div>
+                        <div class="song-item" data-src="Superstar - Mido and Falasol.mp3">
+                            <span class="song-number">8</span>
+                            <span class="song-name">Superstar - Mido and Falasol</span>
+                        </div>
+                        <div class="song-item" data-src="Từng Ngày Yêu Em - buitruonglinh.mp3">
+                            <span class="song-number">9</span>
+                            <span class="song-name">Từng Ngày Yêu Em - buitruonglinh</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="letter-signature">~ Love, Me ~</div>
             </div>
             <div class="envelope-body">
                 <div class="heart"></div>
@@ -47,6 +87,11 @@
     <script>
         const envelope = document.querySelector('.envelope');
         const closeBtn = document.querySelector('.close-btn');
+        const letterImage = document.getElementById('letterImage');
+        const musicPlaylist = document.querySelector('.music-playlist');
+        const closePlaylistBtn = document.querySelector('.close-playlist-btn');
+        const audioPlayer = document.getElementById('audioPlayer');
+        const songItems = document.querySelectorAll('.song-item');
         
         envelope.addEventListener('click', function(e) {
             // Không mở nếu click vào nút close
@@ -58,6 +103,51 @@
         closeBtn.addEventListener('click', function(e) {
             e.stopPropagation();
             envelope.classList.remove('opened');
+            musicPlaylist.classList.remove('show');
+        });
+
+        // Click vào hình ảnh để mở playlist
+        letterImage.addEventListener('click', function(e) {
+            e.stopPropagation();
+            musicPlaylist.classList.add('show');
+        });
+
+        // Đóng playlist
+        closePlaylistBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            musicPlaylist.classList.remove('show');
+        });
+
+        // Click vào bài hát để phát
+        songItems.forEach((item, index) => {
+            item.addEventListener('click', function(e) {
+                e.stopPropagation();
+                
+                // Xóa active từ tất cả các bài
+                songItems.forEach(song => song.classList.remove('active'));
+                
+                // Thêm active cho bài đang chọn
+                this.classList.add('active');
+                
+                // Phát nhạc
+                const songSrc = this.getAttribute('data-src');
+                audioPlayer.src = songSrc;
+                audioPlayer.play();
+            });
+        });
+
+        // Tự động phát bài tiếp theo
+        audioPlayer.addEventListener('ended', function() {
+            const currentActive = document.querySelector('.song-item.active');
+            if (currentActive) {
+                const nextSong = currentActive.nextElementSibling;
+                if (nextSong && nextSong.classList.contains('song-item')) {
+                    nextSong.click();
+                } else {
+                    // Quay lại bài đầu tiên
+                    songItems[0].click();
+                }
+            }
         });
     </script>
 </body>
