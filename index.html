@@ -31,6 +31,7 @@
             <div class="letter-content">
                 <button class="close-btn">✕</button>
                 <img src="1.jpg" alt="Letter" class="letter-image" id="letterImage">
+                <button class="open-playlist-btn">🎵 Open Playlist</button>
                 <div class="music-playlist">
                     <button class="close-playlist-btn">✕</button>
                     <div class="playlist-header">
@@ -88,6 +89,7 @@
         const envelope = document.querySelector('.envelope');
         const closeBtn = document.querySelector('.close-btn');
         const letterImage = document.getElementById('letterImage');
+        const openPlaylistBtn = document.querySelector('.open-playlist-btn');
         const musicPlaylist = document.querySelector('.music-playlist');
         const closePlaylistBtn = document.querySelector('.close-playlist-btn');
         const audioPlayer = document.getElementById('audioPlayer');
@@ -111,8 +113,8 @@
             songItems.forEach(song => song.classList.remove('active'));
         });
 
-        // Click vào hình ảnh để mở playlist
-        letterImage.addEventListener('click', function(e) {
+        // Click vào nút để mở playlist
+        openPlaylistBtn.addEventListener('click', function(e) {
             e.stopPropagation();
             musicPlaylist.classList.add('show');
         });
