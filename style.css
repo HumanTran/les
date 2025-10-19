@@ -328,7 +328,7 @@ body::after {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 48vh;
+    width: 55vh;
     background: #ffffff;
     border-radius: 31px;
     padding: 42px 38px;
@@ -419,12 +419,37 @@ body::after {
     border-radius: 18px;
     display: block;
     object-fit: contain;
-    cursor: pointer;
-    transition: transform 0.3s ease;
+    margin-bottom: 22px;
 }
 
-.letter-image:hover {
-    transform: scale(1.02);
+.open-playlist-btn {
+    width: 95%;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #C89FD8 0%, #9B6BB8 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(155, 107, 184, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 auto;
+}
+
+.open-playlist-btn:hover {
+    background: linear-gradient(135deg, #9B6BB8 0%, #C89FD8 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(155, 107, 184, 0.4);
+}
+
+.open-playlist-btn:active {
+    transform: translateY(0);
 }
 
 /* Music Playlist Styles */
@@ -518,8 +543,8 @@ body::after {
     margin-bottom: 20px;
     border-radius: 12px;
     outline: none;
-    background: #ffffff;
-    box-shadow: 0 4px 12px rgba(155, 107, 184, 0.15);
+    background: transparent;
+    box-shadow: none;
 }
 
 .playlist-container {
@@ -571,7 +596,6 @@ body::after {
     background: linear-gradient(135deg, #C89FD8 0%, #9B6BB8 100%);
     color: #ffffff;
     box-shadow: 0 4px 16px rgba(155, 107, 184, 0.4);
-    animation: pulse 1.5s ease-in-out infinite;
 }
 
 @keyframes pulse {
