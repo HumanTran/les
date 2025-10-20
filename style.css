@@ -459,7 +459,7 @@ body::after {
     left: 50%;
     transform: translate(-50%, -50%) scale(0.8);
     width: 90%;
-    max-width: 450px;
+    max-width: 45vh;
     max-height: 85vh;
     background: linear-gradient(135deg, #F0E8FC 0%, #E8DCFA 100%);
     border-radius: 24px;
@@ -479,6 +479,7 @@ body::after {
 .music-playlist.show {
     opacity: 1;
     visibility: visible;
+    width: 85vw;
     transform: translate(-50%, -50%) scale(1);
 }
 
@@ -874,6 +875,10 @@ body::after {
         width: 28px;
         height: 28px;
         font-size: 18px;
+    }
+
+    .letter-content {
+        width: 80vw;
     }
 }
 
