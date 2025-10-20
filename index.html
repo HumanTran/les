@@ -52,7 +52,7 @@
                             <span class="song-number">3</span>
                             <span class="song-name">Yours - Jimmy Brown</span>
                         </div>
-                        <div class="song-item" data-src="Yours - Raiden.mp3">
+                        <div class="song-item" data-src="Yours - Raiden.mp3"> 
                             <span class="song-number">4</span>
                             <span class="song-name">Yours - Raiden, CHANYEOL</span>
                         </div>
@@ -122,12 +122,9 @@
         // Đóng playlist
         closePlaylistBtn.addEventListener('click', function(e) {
             e.stopPropagation();
+            //tắt playlist nhạc vẫn chạy
             musicPlaylist.classList.remove('show');
-            // Tắt nhạc khi đóng playlist
-            audioPlayer.pause();
-            audioPlayer.currentTime = 0;
-            // Xóa active từ tất cả các bài
-            songItems.forEach(song => song.classList.remove('active'));
+            
         });
 
         // Click vào bài hát để phát
