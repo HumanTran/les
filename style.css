@@ -459,7 +459,7 @@ body::after {
     left: 50%;
     transform: translate(-50%, -50%) scale(0.8);
     width: 90%;
-    max-width: 45vh;
+    max-width: 60vh;
     max-height: 85vh;
     background: linear-gradient(135deg, #F0E8FC 0%, #E8DCFA 100%);
     border-radius: 24px;
