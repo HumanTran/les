@@ -105,8 +105,8 @@ body::after {
     top: 52%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     background: url('kuromi.jpg') no-repeat center center;
     background-size: contain;
     z-index: 20;
@@ -440,6 +440,7 @@ body::after {
     justify-content: center;
     gap: 8px;
     margin: 0 auto;
+    text-decoration: none;
 }
 
 .open-playlist-btn:hover {
