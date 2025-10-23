@@ -327,9 +327,8 @@ body::after {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     width: 55vh;
-    background: #ffffff;
+    background: #ffffff !important;
     border-radius: 31px;
     padding: 42px 38px;
     box-shadow: 
@@ -337,10 +336,9 @@ body::after {
         inset 0 0 0 3px rgba(200, 159, 216, 0.3);
     z-index: 100;
     font-family: 'Quicksand', sans-serif;
-    opacity: 0;
-    visibility: hidden;
-    transform: translate(-50%, -50%) scale(0.8);
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
 }
 
 .envelope.opened .letter-content {
